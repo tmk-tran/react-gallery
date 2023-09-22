@@ -7,7 +7,7 @@ export default function GalleryItem() {
             <img src="images/goat_small.jpg" alt="goat" />
             </div>
             <div>
-                <button>Like</button>
+                <button onClick={() => console.log('Clicked Like!')}>Like</button>
             </div>
         
         </div>
