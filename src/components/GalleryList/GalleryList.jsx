@@ -1,5 +1,5 @@
 // import "./Gallery.css";
-import GalleryItems from "../GalleryItem/GalleryItem";
+import GalleryItems from "../GalleryItems/GalleryItems";
 
 
 export default function GalleryList ({ imagesList }) { // pass in addLIke later
