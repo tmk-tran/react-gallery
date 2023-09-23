@@ -1,6 +1,6 @@
 // import { useState } from "react";
 
-export default function GalleryItem() {
+export default function GalleryItems() {
     return (
         <div className="card">
             <div>
