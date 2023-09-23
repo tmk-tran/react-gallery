@@ -10,6 +10,7 @@ function App() {
     getImages();
   }, []);
 
+  // GET axios for images
   const getImages = () => {
     axios
       .get("/gallery/")
@@ -21,6 +22,7 @@ function App() {
       });
   };
 
+  // PUT axios request to update likes
   const updateLikes = (id) => {
     axios
     .put(`/gallery/like/${id}`)
