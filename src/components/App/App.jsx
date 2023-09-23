@@ -21,6 +21,18 @@ function App() {
       });
   };
 
+  const updateLikes = (id) => {
+    axios
+    .put(`/gallery/like/${id}`)
+    .then((response) => {
+        getImages();
+        console.log("Likes updated", response);
+      })
+    .catch((error) => {
+        console.log("Error in updateLikes PUT", error);
+      });
+  }
+
   return (
     <div className="App">
       <header className="App-header">
@@ -28,7 +40,7 @@ function App() {
       </header>
 
       <main>
-        <GalleryList imagesList={imagesList} />
+        <GalleryList imagesList={imagesList} updateLikes={updateLikes} />
       </main>
 
     </div>
