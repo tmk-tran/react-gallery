@@ -28,8 +28,8 @@ function App() {
       </header>
 
       <main>
-        <GalleryList imagesList={imagesList} />
         <img src="images/goat_small.jpg" />
+        <GalleryList imagesList={imagesList} />
       </main>
 
     </div>
