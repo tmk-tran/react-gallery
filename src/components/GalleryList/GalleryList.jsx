@@ -3,7 +3,7 @@ import GalleryItem from "../GalleryItem/GalleryItem";
 
 
 
-export default function GalleryList ({ imagesList, updateLikes }) { // pass in addLIke later
+export default function GalleryList ({ imagesList, updateLikes }) { // pass in updateLikes as a prop
     
 
     return(
