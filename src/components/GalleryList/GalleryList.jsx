@@ -1,5 +1,5 @@
 // import "./Gallery.css";
-import GalleryItems from "../GalleryItems/GalleryItems";
+import GalleryItem from "../GalleryItem/GalleryItem";
 
 
 export default function GalleryList ({ imagesList }) { // pass in addLIke later
@@ -8,7 +8,7 @@ export default function GalleryList ({ imagesList }) { // pass in addLIke later
     return(
         <>
             {imagesList.map(image => 
-                 <GalleryItems key={image.id} image={image}  />
+                 <GalleryItem key={image.id} image={image}  />
             )}
        </>
     )
