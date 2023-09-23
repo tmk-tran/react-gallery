@@ -2,6 +2,7 @@
 import GalleryItem from "../GalleryItem/GalleryItem";
 
 
+
 export default function GalleryList ({ imagesList }) { // pass in addLIke later
     
 
