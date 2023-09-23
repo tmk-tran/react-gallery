@@ -13,3 +13,13 @@
   font-size: 1.5em;
 }
 
+img {
+  height: 200px;
+  width: 200px;
+}
+
+.images {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)); /* 4 items wide, adjust column width as needed */
+  gap: 10px;
+}
