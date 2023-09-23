@@ -13,3 +13,13 @@
   font-size: 1.5em;
 }
 
+img {
+  height: 130px;
+  width: 130px;
+}
+
+.images {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
