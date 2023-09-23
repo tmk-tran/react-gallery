@@ -14,12 +14,12 @@
 }
 
 img {
-  height: 130px;
-  width: 130px;
+  height: 200px;
+  width: 200px;
 }
 
 .images {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)); /* 4 items wide, adjust column width as needed */
+  gap: 10px;
 }

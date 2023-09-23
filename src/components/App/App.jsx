@@ -28,7 +28,6 @@ function App() {
       </header>
 
       <main>
-        <img src="images/goat_small.jpg" />
         <GalleryList imagesList={imagesList} />
       </main>
 
