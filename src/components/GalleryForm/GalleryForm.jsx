@@ -60,5 +60,3 @@ export default function GalleryForm({ addImage }) {
     </div>
   );
 }
-
-// <TextField variant="filled" label="image URL" value={newUrl} onChange={(event) => setNewUrl(event.target.value)} />
