@@ -17,11 +17,14 @@ export default function GalleryForm({ addImage }) {
 
   //function for handleAdd
   const handleAdd = () => {
+    if(newUrl === '' || undefined) {
+        alert('Please enter an image url!');
+    } else {
     addImage(newUrl, description);
     setNewUrl("");
     setDescription("");
     toggleForm();
-  };
+  }};
 
   return (
     <div>
