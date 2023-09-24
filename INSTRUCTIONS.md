@@ -74,3 +74,10 @@ For each `feature` of your application, make a branch, work on the branch, and t
 - [] Use [multer](https://github.com/expressjs/multer) for image upload 
 
 > NOTE: The above stretch goals are intended to be completed in order.
+
+
+
+[] make an edit button that allows description to be modified
+[] make a comment button that can add comments/view
+[] back to the top button?
+[] side menu?

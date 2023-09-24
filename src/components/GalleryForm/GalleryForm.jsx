@@ -44,6 +44,7 @@ export default function GalleryForm({ addImage }) {
             label="Enter Image URL"
             value={newUrl}
             onChange={(event) => setNewUrl(event.target.value)}
+            required
           />  
           <TextField
             className="description"
