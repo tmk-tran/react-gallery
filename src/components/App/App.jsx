@@ -41,6 +41,7 @@ function App() {
   // POST for adding new image
   const addImage = (event) => {
     event.preventDefault();
+    console.log("image path: ", imagePath);
     axios.post("/gallery/", {
       path: imagePath, 
       description: imageDescription,
@@ -64,7 +65,7 @@ function App() {
 
       <main>
         <div className="form-container">
-          <GalleryForm addImage={addImage}/>
+          <GalleryForm addImage={addImage} imagePath={imagePath} setImagePath={setImagePath} imageDescription={imageDescription} setImageDescription={setImageDescription}/>
         </div>
         <GalleryList imagesList={imagesList} updateLikes={updateLikes} />
       </main>
