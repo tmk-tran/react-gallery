@@ -25,8 +25,8 @@ function App() {
   };
 
   // POST 
-  const addImage = (imageUrl) => {
-    console.log("image URL: ", imageUrl);
+  const addImage = (imageUrl, imageDescription) => {
+    console.log("image URL: ", imageUrl, imageDescription);
 
     axios
       .post("/gallery/", {
