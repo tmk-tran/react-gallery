@@ -24,19 +24,6 @@ function App() {
       });
   };
 
-  // PUT 
-  const updateLikes = (id) => {
-    axios
-      .put(`/gallery/like/${id}`)
-      .then((response) => {
-        getImages();
-        console.log("Likes updated", response);
-      })
-      .catch((error) => {
-        console.log("Error in updateLikes PUT", error);
-      });
-  };
-
   // POST 
   const addImage = (imageUrl) => {
     console.log("image URL: ", imageUrl);
@@ -78,7 +65,7 @@ function App() {
         <div className="form-container">
           <GalleryForm addImage={addImage} />
         </div>
-        <GalleryList imagesList={imagesList} updateLikes={updateLikes} deleteImage={deleteImage}/>
+        <GalleryList imagesList={imagesList} deleteImage={deleteImage}/>
       </main>
     </div>
   );
