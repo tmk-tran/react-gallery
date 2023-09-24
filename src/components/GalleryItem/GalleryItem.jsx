@@ -1,6 +1,6 @@
 import { useState } from "react";
 
-export default function GalleryItem({ image, updateLikes }) {
+export default function GalleryItem({ image, updateLikes, deleteImage }) { // pass in updateLikes, deleteImage as props
   // pass in updateLikes as a prop
   const [likes, setLikes] = useState(image.likes);
   const [showImage, setShowImage] = useState(true);
@@ -33,6 +33,7 @@ export default function GalleryItem({ image, updateLikes }) {
           </div>
         )}
             <button onClick={handleLikes}>Like</button>
+            <button onClick={() => deleteImage(image.id)}>Delete</button>
             <p>Likes: {likes}</p>
     </div>
   );

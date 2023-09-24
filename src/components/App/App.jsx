@@ -12,7 +12,7 @@ function App() {
     getImages();
   }, []);
 
-  // GET axios for images
+  // GET 
   const getImages = () => {
     axios
       .get("/gallery/")
@@ -24,7 +24,7 @@ function App() {
       });
   };
 
-  // PUT axios request to update likes
+  // PUT 
   const updateLikes = (id) => {
     axios
       .put(`/gallery/like/${id}`)
@@ -37,7 +37,7 @@ function App() {
       });
   };
 
-  // POST for adding new image
+  // POST 
   const addImage = (imageUrl) => {
     console.log("image URL: ", imageUrl);
 
@@ -56,6 +56,18 @@ function App() {
       });
   };
 
+  // DELETE (stretch)
+  const deleteImage = (id) => {
+    axios
+      .delete(`/gallery/${id}`)
+      .then((response) => {
+        getImages();
+      })
+      .catch((error) => {
+        console.log("Error in deleteImage", error);
+      });
+  };
+
   return (
     <div className="App">
       <header className="App-header">
@@ -66,7 +78,7 @@ function App() {
         <div className="form-container">
           <GalleryForm addImage={addImage} />
         </div>
-        <GalleryList imagesList={imagesList} updateLikes={updateLikes} />
+        <GalleryList imagesList={imagesList} updateLikes={updateLikes} deleteImage={deleteImage}/>
       </main>
     </div>
   );
