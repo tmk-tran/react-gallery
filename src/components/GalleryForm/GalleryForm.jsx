@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 // Import the TextField component from Material-UI
 import TextField from "@mui/material/TextField";
+import ClearIcon from "@mui/icons-material/Clear";
 
 export default function GalleryForm({ addImage }) {
   const [showForm, setShowForm] = useState(false);
@@ -25,22 +26,29 @@ export default function GalleryForm({ addImage }) {
   return (
     <div>
       {!showForm ? (
-        <button className="addBtn" onClick={toggleForm}>
-          +
-        </button>
+        <div className="toggleBtn">
+          <div className="add-container">
+            <button className="addBtn" onClick={toggleForm}>
+              +
+            </button>
+          </div>
+        </div>
       ) : (
         <div className="add-form">
-          <input
-            type="text"
-            id="input"
-            placeholder="Enter Image URL"
+            <ClearIcon
+              className="close-button"
+              onClick={toggleForm}
+            />
+          <TextField
+            variant="outlined"
+            label="Enter Image URL"
             value={newUrl}
             onChange={(event) => setNewUrl(event.target.value)}
-          />
+          />  
           <TextField
             className="description"
-            variant="outlined"
-            label="Enter Description"
+            variant="filled"
+            label="Enter Description (optional)"
             value={description}
             onChange={(event) => setDescription(event.target.value)}
           />

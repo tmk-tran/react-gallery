@@ -23,6 +23,8 @@ main {
   width: 400px;
   overflow: hidden; /* Hides overflow of image */
   min-width: 200px;
+  border-radius: 3px;
+  border: 1px solid rgb(78, 76, 76);
 }
 
 .image-container img {
@@ -48,10 +50,16 @@ main {
   width: 400px;
   border: 1px solid black;
   min-width: 200px;
+  position: relative;
+  display:flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
 }
 
 .description {
-  border: 2px solid black;
+  color: ghostwhite;
+  padding: 25px;
 }
 
 /* ~~~~~~~~~~ Button style ~~~~~~~~~~ */
@@ -63,12 +71,20 @@ main {
 }
 
 .likes {
-  height: 50px;
-  width: 50px;
+  height: 40px;
+  width: 40px;
+  background-color: rgb(248, 248, 255, .1);
+  border-radius: 3px;
+  border: 1px solid rgb(248, 248, 255, .1);
+}
+
+.likes:hover {
+  background-color: rgb(49, 194, 238);
 }
 
 .likes-text {
   display: flex;
+  color: ghostwhite;
 }
 
 .delete {
@@ -76,22 +92,63 @@ main {
   width: 50px;
 }
 
+.delete {
+  background-color: crimson;
+  border-radius: 50%;
+}
+
+.delete:hover {
+  background-color: rgb(239, 95, 124);
+}
+
+.deleteBtn {
+  position: absolute;
+  bottom: 10px;
+  right: 10px;
+}
+
 /* ~~~~~~~~~~ Form style ~~~~~~~~~~ */
 
+.closeBtn {
+  background-color: rgb(157, 157, 237);
+  width: 20px;
+}
+
 .addBtn {
-  display: flex;
-  height: 30px;
-  width: 30px;
+  height: 40px;
+  width: 40px;
   text-align: center;
   font-size: 20px;
-  background-color: aquamarine;
+  background-color: rgb(208, 143, 246);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.addBtn:hover {
+  background-color: rgb(88, 223, 169);
+  transform: scale(1.5);
+  border-radius: 5px;
+  cursor: grab;
+}
+
+.toggleBtn {
+  background-color: azure;
+  height: 50px;
+  width: 50px;
+  display: flex;
+  margin: 0 auto;
+  text-align: center;
+  justify-content: center;
+  margin-bottom: 15px;
+  border-radius: 5px;
 }
 
 .add-form {
   border: 2px solid black;
   border-radius: 5px;
-  height: 200px;
-  width: 50%;
+  height: 220px;
+  width: 40%;
   margin: 0 auto;
   background-color: aliceblue;
   display: flex;
@@ -103,8 +160,14 @@ main {
   padding: 20px;
 }
 
+.add-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
 input {
-  height: 30px;
+  height: 50px;
   width: 100%;
   background-color: rgb(170, 180, 181);
   font-size: 14px;
@@ -112,6 +175,7 @@ input {
   /* border: 1px solid black; */
   border-radius: 5px;
   box-shadow: 5px 5px 10px #888888;
+  text-align: center;
 }
 
 #input::placeholder {
@@ -121,8 +185,4 @@ input {
 .add-image {
   height: 60px;
   background-color: rgb(157, 157, 237);
-}
-
-.description {
-  width: 100%;
 }
