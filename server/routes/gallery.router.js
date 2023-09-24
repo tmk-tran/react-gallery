@@ -53,4 +53,21 @@ router.post("/", (req, res) => {
     });
 });
 
+// DELETE Route
+router.delete("/:id", (req, res) => {
+  const id = req.params.id;
+  console.log("DELETE route /gallery with id of:", id);
+    // sanitize data!
+    const queryText = `DELETE FROM "gallery" WHERE "id" = $1;`
+    pool
+    .query(queryText, [id])
+    .then(() => {
+        res.sendStatus(204); // No Content
+      })
+    .catch((err) => {
+        console.log("error in DELETing item from gallery table", err);
+        res.sendStatus(500); // Internal Server Error
+    });
+})
+
 module.exports = router;
