@@ -1,7 +1,8 @@
 import { useState } from "react";
+import axios from "axios";
 
-export default function GalleryItem({ image, updateLikes, deleteImage }) { // pass in updateLikes, deleteImage as props
-  // pass in updateLikes as a prop
+export default function GalleryItem({ image, deleteImage }) { // pass in deleteImage as props
+
   const [likes, setLikes] = useState(image.likes);
   const [showImage, setShowImage] = useState(true);
 
@@ -14,7 +15,14 @@ export default function GalleryItem({ image, updateLikes, deleteImage }) { // pa
   const handleLikes = () => {
     setLikes(likes + 1);
     console.log("Clicked Like!");
-    updateLikes(image.id); // here to update likes for specific image
+    axios
+      .put(`/gallery/likes/${image.id}`)
+      .then((response) => {
+        console.log("Likes updated on the server", response);
+      })
+      .catch((error) => {
+        console.log("Error in handleLikes PUT to the server", error);
+      });
   };
 
   return (

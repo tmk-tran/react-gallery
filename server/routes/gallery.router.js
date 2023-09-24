@@ -6,16 +6,20 @@ const pool = require('../modules/pool');
 // DO NOT MODIFY THIS FILE FOR BASE MODE
 
 // PUT Route
-router.put("/like/:id", (req, res) => {
-  console.log('like clicked for: ',req.params);
-  const galleryId = req.params.id;
-  for (const galleryItem of galleryItems) {
-    if (galleryItem.id == galleryId) {
-      galleryItem.likes += 1;
-    }
-  }
-  res.sendStatus(200);
-}); // END PUT Route
+router.put("/likes/:id", (req, res) => {
+  const id = req.params.id;
+  console.log("PUT route in /gallery/ with id of ", id);
+  const like = req.body;
+  let queryText = `UPDATE "gallery" SET "likes" = "likes" + 1 WHERE "id" = $1; `;
+  pool
+  .query(queryText, [id])
+  .then(() => {
+      res.sendStatus(204);
+  }).catch((err) => {
+      console.log("error in PUT", err);
+      res.sendStatus(500);
+  });
+});
 
 // GET Route- original
 // router.get("/", (req, res) => {
