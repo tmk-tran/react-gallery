@@ -19,9 +19,10 @@ export default function GalleryItem({ image, updateLikes }) {
 
   return (
     <div className="card">
-      <div>
         {showImage ? (
+        <div className="image-container">
           <img src={image.path} alt={image.description} onClick={imageClick} />
+        </div>  
         ) : (
           <div className="card2" onClick={imageClick}>
             <br />
@@ -31,9 +32,8 @@ export default function GalleryItem({ image, updateLikes }) {
             <p className="description">{image.description}</p>
           </div>
         )}
-        <button onClick={handleLikes}>Like</button>
-        <p>Likes: {likes}</p>
-      </div>
+            <button onClick={handleLikes}>Like</button>
+            <p>Likes: {likes}</p>
     </div>
   );
 }
