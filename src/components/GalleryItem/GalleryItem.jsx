@@ -30,11 +30,17 @@ export default function GalleryItem({ image, updateLikes, deleteImage }) { // pa
             <br />
             <br />
             <p className="description">{image.description}</p>
+            <br />
+            <br />
+            <br />
+            <br />
+            <button className="delete" onClick={() => deleteImage(image.id)}>Delete</button>
           </div>
         )}
-            <button onClick={handleLikes}>Like</button>
-            <button onClick={() => deleteImage(image.id)}>Delete</button>
-            <p>Likes: {likes}</p>
+          <div className="under-image">       
+            <button className="likes" onClick={handleLikes}>Like</button>
+            <p className="likes-text">{likes} likes</p>
+          </div>
     </div>
   );
 }
