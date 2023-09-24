@@ -6,7 +6,6 @@ import "./App.css";
 
 function App() {
   const [imagesList, setImagesList] = useState([]);
-  const [imagePath, setImagePath] = useState("");
   const [imageDescription, setImageDescription] = useState("");
 
   useEffect(() => {
@@ -28,34 +27,34 @@ function App() {
   // PUT axios request to update likes
   const updateLikes = (id) => {
     axios
-    .put(`/gallery/like/${id}`)
-    .then((response) => {
+      .put(`/gallery/like/${id}`)
+      .then((response) => {
         getImages();
         console.log("Likes updated", response);
       })
-    .catch((error) => {
+      .catch((error) => {
         console.log("Error in updateLikes PUT", error);
       });
-  }
+  };
 
   // POST for adding new image
-  const addImage = (event) => {
-    event.preventDefault();
-    console.log("image path: ", imagePath);
-    axios.post("/gallery/", {
-      path: imagePath, 
-      description: imageDescription,
-    })
-   .then((response) => {
+  const addImage = (imageUrl) => {
+    console.log("image URL: ", imageUrl);
+
+    axios
+      .post("/gallery/", {
+        path: imageUrl,
+        description: imageDescription,
+      })
+      .then((response) => {
         getImages();
-        setImagePath("");
         setImageDescription("");
         console.log("Image added", response);
       })
-   .catch((error) => {
+      .catch((error) => {
         console.log("Error in addImage POST", error);
       });
-  }
+  };
 
   return (
     <div className="App">
@@ -65,11 +64,10 @@ function App() {
 
       <main>
         <div className="form-container">
-          <GalleryForm addImage={addImage} imagePath={imagePath} setImagePath={setImagePath} imageDescription={imageDescription} setImageDescription={setImageDescription}/>
+          <GalleryForm addImage={addImage} />
         </div>
         <GalleryList imagesList={imagesList} updateLikes={updateLikes} />
       </main>
-
     </div>
   );
 }
