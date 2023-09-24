@@ -13,10 +13,10 @@ export default function GalleryItem({ image, deleteImage }) { // pass in deleteI
 
   // for when button is clicked
   const handleLikes = () => {
-    setLikes(likes + 1);
+    setLikes(likes + 1); // increase count
     console.log("Clicked Like!");
     axios
-      .put(`/gallery/likes/${image.id}`)
+      .put(`/gallery/likes/${image.id}`) // couldn't find id, had errors, couldn't resolve until I changed this to include {image.id}
       .then((response) => {
         console.log("Likes updated on the server", response);
       })
