@@ -2,20 +2,25 @@ import React, { useState } from 'react';
 
 export default function GalleryForm({ addImage }) {
     const [showForm, setShowForm] = useState(false);
-    const [newImage, setNewImage] = useState({path: '', description: ''});
+    const [newUrl, setNewUrl] = useState('');
 
     // function to toggle the form
     const toggleForm = () => {
         setShowForm(!showForm);
         console.log(showForm);
+        setNewUrl('');
     };
 
-    // for when the button is clicked
-    const handleAdd = (event) => {
-       
-        
-        console.log('clicked ADD button');
-        // function name for PUT request
+    //function to handle input change
+    const handleInputChange = (e) => {
+        setNewUrl(e.target.value);
+    };
+
+    //function for handleAdd
+    const handleAdd = () => {
+        addImage(newUrl);
+        setNewUrl('');
+        toggleForm();
     };
 
     return (
@@ -24,7 +29,7 @@ export default function GalleryForm({ addImage }) {
             <button className="addBtn" onClick={toggleForm}>+</button>
             ) : (
             <div>    
-            <input type="text" placeholder="image URL" />
+            <input type="text" placeholder="image URL" value={newUrl} onChange={handleInputChange} />
             <button onClick= {addImage}>ADD</button>
             </div>
             )}
@@ -32,7 +37,3 @@ export default function GalleryForm({ addImage }) {
         
     );
 };
-
-
-// <input type="text" placeholder="image URL" />
-// <button onClick= {handleAdd}>ADD</button>
