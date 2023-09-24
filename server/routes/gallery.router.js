@@ -36,4 +36,21 @@ router.get("/", (req, res) => {
     });
 });
 
+// POST Route
+router.post("/", (req, res) => {
+  const newImage = req.body;
+  
+  const queryText = `INSERT INTO "gallery" ("path", "description") VALUES ($1, $2);`;
+  
+  pool
+  .query(queryText, [newImage.path, newImage.description])
+  .then(() => {
+      res.sendStatus(201);
+    })
+  .catch((error) => {
+      console.log(`Error making database POST request`, error);
+      res.sendStatus(500);
+    });
+});
+
 module.exports = router;

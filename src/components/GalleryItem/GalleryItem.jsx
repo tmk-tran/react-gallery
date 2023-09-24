@@ -21,7 +21,7 @@ export default function GalleryItem({ image, updateLikes }) {
     <div className="card">
         {showImage ? (
         <div className="image-container">
-          <img src={image.path} alt={image.description} onClick={imageClick} />
+          <img key={image.id} src={image.path} alt={image.description} onClick={imageClick} />
         </div>  
         ) : (
           <div className="card2" onClick={imageClick}>

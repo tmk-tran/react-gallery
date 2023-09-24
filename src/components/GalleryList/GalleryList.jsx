@@ -1,4 +1,3 @@
-// import "./Gallery.css";
 import GalleryItem from "../GalleryItem/GalleryItem";
 
 
