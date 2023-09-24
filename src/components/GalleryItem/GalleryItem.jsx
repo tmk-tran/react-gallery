@@ -53,10 +53,11 @@ export default function GalleryItem({ image, deleteImage }) {
         <button className="likes" onClick={handleLikes}>
           <FavoriteIcon style={{ fontSize: 24, color: "red" }} />
         </button>
+        <p className="likes-text">{likes} likes</p>
+        <br />
         <button className="editBtn" onClick={imageClick}>
           Hit me!
         </button>
-        <p className="likes-text">{likes} likes</p>
       </div>
     </div>
   );
