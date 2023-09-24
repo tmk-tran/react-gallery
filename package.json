@@ -6,9 +6,12 @@
   "dependencies": {
     "@emotion/react": "^11.11.1",
     "@emotion/styled": "^11.11.0",
+    "@mui/icons-material": "^5.14.9",
     "@mui/material": "^5.14.10",
     "axios": "^0.19.2",
     "express": "^4.17.1",
+    "install": "^0.13.0",
+    "npm": "^10.1.0",
     "pg": "^8.11.3",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
