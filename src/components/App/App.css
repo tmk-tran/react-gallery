@@ -13,6 +13,7 @@
   font-size: 1.5em;
 }
 
+/* ~~~~~~~~~~ Image style ~~~~~~~~~~ */
 .image-container {
   height: 400px;
   width: 400px;
@@ -42,4 +43,9 @@
 
 .description {
   border: 2px solid black;
+}
+
+/* ~~~~~~~~~~ Form style ~~~~~~~~~~ */
+.form-container {
+  display: flex;
 }

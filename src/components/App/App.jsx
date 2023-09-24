@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
 import axios from "axios";
 import GalleryList from "../GalleryList/GalleryList";
+import GalleryForm from "../GalleryForm/GalleryForm";
 import "./App.css";
 
 function App() {
@@ -42,6 +43,10 @@ function App() {
       </header>
 
       <main>
+        <div className="form-container">
+          <GalleryForm />
+        </div>
+        <button className="addBtn" onClick={() => console.log('clicked +')}>+</button>
         <GalleryList imagesList={imagesList} updateLikes={updateLikes} />
       </main>
 
