@@ -6,6 +6,8 @@ import "./App.css";
 
 function App() {
   const [imagesList, setImagesList] = useState([]);
+  const [imagePath, setImagePath] = useState("");
+  const [imageDescription, setImageDescription] = useState("");
 
   useEffect(() => {
     getImages();
@@ -36,6 +38,24 @@ function App() {
       });
   }
 
+  // POST for adding new image
+  const addImage = (event) => {
+    event.preventDefault();
+    axios.post("/gallery/", {
+      path: imagePath, 
+      description: imageDescription,
+    })
+   .then((response) => {
+        getImages();
+        setImagePath("");
+        setImageDescription("");
+        console.log("Image added", response);
+      })
+   .catch((error) => {
+        console.log("Error in addImage POST", error);
+      });
+  }
+
   return (
     <div className="App">
       <header className="App-header">
@@ -44,9 +64,8 @@ function App() {
 
       <main>
         <div className="form-container">
-          <GalleryForm />
+          <GalleryForm addImage={addImage}/>
         </div>
-        <button className="addBtn" onClick={() => console.log('clicked +')}>+</button>
         <GalleryList imagesList={imagesList} updateLikes={updateLikes} />
       </main>
 
