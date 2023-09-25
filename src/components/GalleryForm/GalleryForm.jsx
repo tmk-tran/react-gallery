@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import "./GalleryForm.css";
 // Import the TextField component from Material-UI
 import TextField from "@mui/material/TextField";
 import ClearIcon from "@mui/icons-material/Clear";
