@@ -98,6 +98,8 @@ function App() {
     <div className="App">
       <header className="App-header">
         <h1 className="App-title">React Gallery</h1>
+        <h1 className="App-title" style={{ fontSize: "1em" }}>( a 'Not-Instagram' production )</h1>
+        <h1 className="App-title" style={{ fontSize: "1em" }}>by: T Schisel</h1>
       </header>
       <main>
         <hr />

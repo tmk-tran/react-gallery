@@ -13,11 +13,12 @@ VALUES ('images/IMG_E25.jpeg', 'Big Sky'),
        ('images/IMG_2CE.jpeg', '`Lil Kaeden as a baby'),
        ('images/IMG_8304.jpeg', 'Ninja 636R'),
        ('images/IMG_8360.jpeg', 'Me and lil man'),
-       ('images/IMG_8442.jpg', 'My lil ninja');
+       ('images/IMG_8442.jpg', 'My lil ninja'),
+       ('images/IMG_3760.jpeg', 'Seraph, my GSD');
 
 INSERT INTO gallery ("path", "description")
-VALUES ('https://www.treehugger.com/thmb/o2GZPpDoa8hVq9ci9AZvgF5P6JQ=/4288x2848/filters:no_upscale():max_bytes(150000):strip_icc()/__opt__aboutcom__coeus__resources__content_migration__mnn__images__2015__08__leptopelis-vermiculatus-tree-frog-9eac464118ed4ca8a1fbff8907295258.jpg', 'Ribbit, bro'),
-('http://amphibianrescue.org/amphibianwordpress/wp-content/uploads/2011/07/Granular-glass-frog-Cochranella-granulosa-Kristen-Martyn-Flickr.jpg', 'Bro...guess what? ...Ribbit'),
+VALUES ('https://www.treehugger.com/thmb/o2GZPpDoa8hVq9ci9AZvgF5P6JQ=/4288x2848/filters:no_upscale():max_bytes(150000):strip_icc()/__opt__aboutcom__coeus__resources__content_migration__mnn__images__2015__08__leptopelis-vermiculatus-tree-frog-9eac464118ed4ca8a1fbff8907295258.jpg', 'Ribbit, bruh'),
+('http://amphibianrescue.org/amphibianwordpress/wp-content/uploads/2011/07/Granular-glass-frog-Cochranella-granulosa-Kristen-Martyn-Flickr.jpg', '...guess what? ...Ribbit'),
 ('https://i.pinimg.com/originals/fb/30/d0/fb30d0ef2fd6304ebcb837a59afb8817.jpg', 'Yes, yes my good sir'),
 ('https://www.freecodecamp.org/news/content/images/2019/07/this-is-javascript.jpeg', '...Javascript, bro');
 
@@ -43,6 +44,9 @@ UPDATE "gallery" SET "likes" = 987 WHERE "id" = 7;
 UPDATE "gallery" SET "likes" = 1850 WHERE "id" = 8;
 
 UPDATE "gallery" SET "likes" = 22632 WHERE "id" = 9;
+
+UPDATE "gallery" SET "likes" = 14762 WHERE "id" = 10;
+
 
 /* Feeling down? ...Defeated? ...Tired of databases, data, image galleries, and other stuff? */
 /* ...try the following SQL commands and smile, for all your worries have been DROPPED, ayyy! */

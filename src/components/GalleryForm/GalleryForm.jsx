@@ -20,7 +20,7 @@ export default function GalleryForm({ addImage }) {
   //function for handleAdd
   const handleAdd = () => {
     if(newUrl === '' || undefined) {
-        alert('Please enter an image url!');
+        alert('Please enter an image URL!');
     } else {
     addImage(newUrl, description);
     setNewUrl("");

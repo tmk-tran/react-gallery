@@ -30,6 +30,9 @@ export default function GalleryItem({ image, deleteImage }) {
       });
   };
 
+  // Format 'likes' with commas
+  const commaLikes = likes.toLocaleString();
+
   return (
     <div className="card">
       {showImage ? (
@@ -55,7 +58,7 @@ export default function GalleryItem({ image, deleteImage }) {
         <button className="likes" onClick={handleLikes}>
           <FavoriteIcon style={{ fontSize: 24, color: "red" }} />
         </button>
-          <p className="likes-text">{likes} likes</p>
+          <p className="likes-text">{commaLikes} likes</p>
           <br />
         <div className="editBtn-container">
           <button className="editBtn" onClick={imageClick}><SubjectIcon style={{ color:"rgb(157, 157, 255)" }} /></button>
