@@ -27,6 +27,8 @@ For additional styling,
 
 ## Application Instructions
 
+Due to its inline-styling, this application was designed to be viewed on a smaller size screen, or window in browser. Viewing on a full size window may result in wide unused space on each side of images.  More design to come!
+
 Please review the database.sql file for information on how to create a database for this application.
 
 - To view image description, click either the image itself, or the button below, located to the bottom right of the image.
