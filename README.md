@@ -14,11 +14,15 @@ To practice passing values through `props` in React, I built the gallery using m
 - `GalleryList` - represents the gallery of images. 
 - `GalleryItem` - represents a single image in the gallery with the ability to click the image to toggle between image and description as well as the ability to like an image.
 
-## Technology Used
+## Technologies Used
 - React
 - JavaScript
 - HTML
 - CSS
+- Node.js
+- PostgreSQL
+- React.js
+- PG 
 
 For additional styling, 
     - Material UI
@@ -32,6 +36,24 @@ Due to its inline-styling, this application was designed to be viewed on a small
 Please review the database.sql file for information on how to create a database for this application.
 
 ###### USE: ######
+
+### Setup
+
+There is no database component to base mode. All data is stored in an array on the server. Before you get started, add a few images to the `public/images` folder and modify the `server/modules/data.js` to include an `id`, `title`, `description` and `path for` each of your images. Each `id` should be a unique number (e.g. 1, 2, 3...).
+
+Running the server code requires `nodemon`. If you don't already have `nodemon`, install it globally with `npm install nodemon --global`.
+
+```
+npm install
+npm run server
+```
+
+Now that the server is running, open a new terminal tab with `cmd + t` and start the react client app.
+
+```
+npm run client
+```
+
 - To view image description, click either the image itself, or the button below, located to the bottom right of the image.
     - On click, will reveal a red delete button. pressing this will delete the corresponding image from the page, and database.
 

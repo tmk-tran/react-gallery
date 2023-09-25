@@ -71,7 +71,7 @@ img {
 }
 
 /* ~~~~~~~~~~ Button style ~~~~~~~~~~ */
-.under-image {
+/* .under-image {
   display: flex;
   flex-direction: row;
   gap: 25px;
@@ -118,13 +118,13 @@ img {
   position: absolute;
   bottom: 10px;
   right: 10px;
-}
+} */
 
-.editBtn-container {
-  margin-left: auto; /* pushes to the far right of under-image container */
-}
+/* .editBtn-container {
+  margin-left: auto; pushes to the far right of under-image container */
+/* } */
 
-.editBtn {
+/* .editBtn {
   background-color: rgb(75, 65, 85);
   border-radius: 5px;
   border: 1px solid rgb(90, 103, 115);
@@ -132,7 +132,7 @@ img {
 
 .editBtn:hover {
   background-color: rgb(100, 100, 100);
-}
+} */
 
 /* ~~~~~~~~~~ Form style ~~~~~~~~~~ */
 

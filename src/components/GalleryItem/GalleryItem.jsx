@@ -1,12 +1,13 @@
 import { useState } from "react";
 import axios from "axios";
+import "./GalleryItem.css";
 import FavoriteIcon from "@mui/icons-material/Favorite";
 import DeleteIcon from "@mui/icons-material/Delete";
 import SubjectIcon from '@mui/icons-material/Subject';
 
 
 export default function GalleryItem({ image, deleteImage }) {
-  // pass in deleteImage as props
+                                            // ^^ pass in deleteImage as props
 
   const [likes, setLikes] = useState(image.likes);
   const [showImage, setShowImage] = useState(true);
