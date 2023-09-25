@@ -70,7 +70,14 @@ For each `feature` of your application, make a branch, work on the branch, and t
   - [x] Client side form (use absolute URL for images)
   - [x] Server side route for posting an image
 - [x] Ability to delete a gallery item
-- [] Add styling with Material-UI [https://material-ui.com/](https://material-ui.com/)
+- [x] Add styling with Material-UI [https://material-ui.com/](https://material-ui.com/)
 - [] Use [multer](https://github.com/expressjs/multer) for image upload 
 
 > NOTE: The above stretch goals are intended to be completed in order.
+
+
+
+[] make an edit button that allows description to be modified
+[] make a comment button that can add comments/view
+[] back to the top button?
+[] side menu?

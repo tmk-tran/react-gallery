@@ -28,7 +28,7 @@ router.put("/likes/:id", (req, res) => {
 
 // GET route for database (stretch goal)
 router.get("/", (req, res) => {
-  const queryText = `SELECT * FROM "gallery";`;
+  const queryText = `SELECT * FROM "gallery" ORDER BY "id" DESC;`;
   pool
     .query(queryText)
     .then((result) => {

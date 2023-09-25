@@ -1,9 +1,10 @@
 import { useState } from "react";
 import axios from "axios";
 import FavoriteIcon from "@mui/icons-material/Favorite";
+import DeleteIcon from "@mui/icons-material/Delete";
 
-
-export default function GalleryItem({ image, deleteImage }) { // pass in deleteImage as props
+export default function GalleryItem({ image, deleteImage }) {
+  // pass in deleteImage as props
 
   const [likes, setLikes] = useState(image.likes);
   const [showImage, setShowImage] = useState(true);
@@ -29,25 +30,35 @@ export default function GalleryItem({ image, deleteImage }) { // pass in deleteI
 
   return (
     <div className="card">
-        {showImage ? (
+      {showImage ? (
         <div className="image-container">
-          <img key={image.id} src={image.path} alt={image.description} onClick={imageClick} />
-        </div>  
-        ) : (
-          <div className="card2" onClick={imageClick}>
-            <p className="description">{image.description}</p>
-            <div className="deleteBtn">
-              <button className="delete" onClick={() => deleteImage(image.id)}>Delete</button>
-            </div>
+          <img
+            key={image.id}
+            src={image.path}
+            alt={image.description}
+            onClick={imageClick}
+          />
+        </div>
+      ) : (
+        <div className="card2" onClick={imageClick}>
+          <p className="description">{image.description}</p>
+          <div className="deleteBtn">
+            <button className="delete" onClick={() => deleteImage(image.id)}>
+              <DeleteIcon style={{ fontSize: 24, color: "black" }} />
+            </button>
           </div>
-        )}
-          <div className="under-image">       
-            <button className="likes" onClick={handleLikes}><FavoriteIcon style={{ fontSize: 24, color: "red" }} /></button>
-            <button className="editBtn" onClick={imageClick}>Hit me!</button>
-            <p className="likes-text">{likes} likes</p>
-          </div>
+        </div>
+      )}
+      <div className="under-image">
+        <button className="likes" onClick={handleLikes}>
+          <FavoriteIcon style={{ fontSize: 24, color: "red" }} />
+        </button>
+        <p className="likes-text">{likes} likes</p>
+        <br />
+        <button className="editBtn" onClick={imageClick}>
+          Hit me!
+        </button>
+      </div>
     </div>
   );
 }
-
-

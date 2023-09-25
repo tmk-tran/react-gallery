@@ -2,6 +2,8 @@ import React, { useState } from "react";
 // Import the TextField component from Material-UI
 import TextField from "@mui/material/TextField";
 import ClearIcon from "@mui/icons-material/Clear";
+import Button from '@mui/material/Button';
+import AddIcon from '@mui/icons-material/Add';
 
 export default function GalleryForm({ addImage }) {
   const [showForm, setShowForm] = useState(false);
@@ -17,20 +19,23 @@ export default function GalleryForm({ addImage }) {
 
   //function for handleAdd
   const handleAdd = () => {
+    if(newUrl === '' || undefined) {
+        alert('Please enter an image url!');
+    } else {
     addImage(newUrl, description);
     setNewUrl("");
     setDescription("");
     toggleForm();
-  };
+  }};
 
   return (
     <div>
       {!showForm ? (
         <div className="toggleBtn">
           <div className="add-container">
-            <button className="addBtn" onClick={toggleForm}>
-              +
-            </button>
+            <Button className="addBtn" onClick={toggleForm} variant="contained" color="secondary">
+                <AddIcon />
+            </Button>
           </div>
         </div>
       ) : (
@@ -44,6 +49,7 @@ export default function GalleryForm({ addImage }) {
             label="Enter Image URL"
             value={newUrl}
             onChange={(event) => setNewUrl(event.target.value)}
+            required
           />  
           <TextField
             className="description"
@@ -60,5 +66,3 @@ export default function GalleryForm({ addImage }) {
     </div>
   );
 }
-
-// <TextField variant="filled" label="image URL" value={newUrl} onChange={(event) => setNewUrl(event.target.value)} />
