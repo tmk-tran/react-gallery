@@ -65,18 +65,6 @@ npm run client
 - review of SQL database protocols, and operation
 - using Postman for testing, need to review
 
-## Stretch Goals completed
-
-- [x] Move the data into a database (postgresql)
-    - [x] name your database `react_gallery`
-    - [x] include a `database.sql` file documenting your database tables
-- [x] Add a form (new **component**) that allows a user to POST a new gallery item
-  - [x] Client side form (use absolute URL for images)
-  - [x] Server side route for posting an image
-- [x] Ability to delete a gallery item
-- [x] Add styling with Material-UI [https://material-ui.com/](https://material-ui.com/)
-- [x] Use [multer](https://github.com/expressjs/multer) for image upload 
-
 ## Additional Goals to be completed in the near future:
 - [] make an edit button that allows description to be modified
 - [] make a comment button that can add comments/view
