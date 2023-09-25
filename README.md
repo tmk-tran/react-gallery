@@ -31,8 +31,9 @@ Due to its inline-styling, this application was designed to be viewed on a small
 
 Please review the database.sql file for information on how to create a database for this application.
 
+###### USE: ######
 - To view image description, click either the image itself, or the button below, located to the bottom right of the image.
-    - this will reveal a red delete button. pressing this will delete the corresponding image from the page, and database.
+    - On click, will reveal a red delete button. pressing this will delete the corresponding image from the page, and database.
 
 
 ## Problems solved
