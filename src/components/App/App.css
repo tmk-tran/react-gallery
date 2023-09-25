@@ -67,6 +67,7 @@ img {
 .description {
   color: ghostwhite;
   padding: 25px;
+  font-family: Monaco;
 }
 
 /* ~~~~~~~~~~ Button style ~~~~~~~~~~ */
@@ -93,6 +94,8 @@ img {
 .likes-text {
   display: flex;
   color: ghostwhite;
+  font-family: baghdad;
+  font-size: 14px;
 }
 
 .delete {
