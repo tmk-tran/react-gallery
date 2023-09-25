@@ -2,6 +2,7 @@ import React, { useState, useEffect } from "react";
 import axios from "axios";
 import GalleryList from "../GalleryList/GalleryList";
 import GalleryForm from "../GalleryForm/GalleryForm";
+import Swal from 'sweetalert2';
 import "./App.css";
 
 function App() {
@@ -44,15 +45,44 @@ function App() {
   };
 
   // DELETE (stretch)
+  // const deleteImage = (id) => {
+  //   axios
+  //     .delete(`/gallery/${id}`)
+  //     .then((response) => {
+  //       getImages();
+  //     })
+  //     .catch((error) => {
+  //       console.log("Error in deleteImage", error);
+  //     });
+  // };
+
+  // DELETE using sweetalert2
   const deleteImage = (id) => {
-    axios
-      .delete(`/gallery/${id}`)
-      .then((response) => {
-        getImages();
-      })
-      .catch((error) => {
-        console.log("Error in deleteImage", error);
-      });
+    Swal.fire({
+      title: 'Wait!',
+      text: 'Are you sure you want to delete this item?',
+      icon: 'warning',
+      showCancelButton: true,
+      confirmButtonText: 'Yes, delete it!',
+      cancelButtonText: 'No, cancel!',
+    }).then((result) => {
+      if (result.isConfirmed) {
+        // User confirmed, proceed with delete action
+        axios
+          .delete(`/gallery/${id}`)
+          .then((response) => {
+            getImages();
+            Swal.fire('Deleted!', 'Your item has been deleted.', 'success');
+          })
+          .catch((error) => {
+            console.log('Error in deleteImage', error);
+            Swal.fire('Error', 'An error occurred while deleting.', 'error');
+          });
+      } else if (result.dismiss === Swal.DismissReason.cancel) {
+        // User canceled, no action needed
+        Swal.fire('Cancelled', 'Your item is safe :)', 'info');
+      }
+    });
   };
 
   return (
@@ -66,6 +96,9 @@ function App() {
         <div className="form-container">
           <GalleryForm addImage={addImage} />
         </div>
+        <br />
+        <br />
+        <br />
         <GalleryList imagesList={imagesList} deleteImage={deleteImage}/>
       </main>
     </div>

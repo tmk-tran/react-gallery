@@ -2,6 +2,8 @@ import React, { useState } from "react";
 // Import the TextField component from Material-UI
 import TextField from "@mui/material/TextField";
 import ClearIcon from "@mui/icons-material/Clear";
+import Button from '@mui/material/Button';
+import AddIcon from '@mui/icons-material/Add';
 
 export default function GalleryForm({ addImage }) {
   const [showForm, setShowForm] = useState(false);
@@ -31,9 +33,9 @@ export default function GalleryForm({ addImage }) {
       {!showForm ? (
         <div className="toggleBtn">
           <div className="add-container">
-            <button className="addBtn" onClick={toggleForm}>
-              +
-            </button>
+            <Button className="addBtn" onClick={toggleForm} variant="contained" color="secondary">
+                <AddIcon />
+            </Button>
           </div>
         </div>
       ) : (
