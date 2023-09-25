@@ -2,7 +2,8 @@ import React, { useState, useEffect } from "react";
 import axios from "axios";
 import GalleryList from "../GalleryList/GalleryList";
 import GalleryForm from "../GalleryForm/GalleryForm";
-import Swal from 'sweetalert2';
+import ArrowUpwardIcon from "@mui/icons-material/ArrowUpward";
+import Swal from "sweetalert2";
 import "./App.css";
 
 function App() {
@@ -13,7 +14,7 @@ function App() {
     getImages();
   }, []);
 
-  // GET 
+  // GET
   const getImages = () => {
     axios
       .get("/gallery/")
@@ -25,7 +26,7 @@ function App() {
       });
   };
 
-  // POST 
+  // POST
   const addImage = (imageUrl, imageDescription) => {
     console.log("image URL: ", imageUrl, imageDescription);
 
@@ -59,12 +60,12 @@ function App() {
   // DELETE using sweetalert2
   const deleteImage = (id) => {
     Swal.fire({
-      title: 'Wait!',
-      text: 'Are you sure you want to delete this item?',
-      icon: 'warning',
+      title: "Wait!",
+      text: "Are you sure you want to delete this item?",
+      icon: "warning",
       showCancelButton: true,
-      confirmButtonText: 'Yes, delete it!',
-      cancelButtonText: 'No, cancel!',
+      confirmButtonText: "Yes, delete it!",
+      cancelButtonText: "No, cancel!",
     }).then((result) => {
       if (result.isConfirmed) {
         // User confirmed, proceed with delete action
@@ -72,18 +73,26 @@ function App() {
           .delete(`/gallery/${id}`)
           .then((response) => {
             getImages();
-            Swal.fire('Deleted!', 'Your item has been deleted.', 'success');
+            Swal.fire("Deleted!", "Your item has been deleted.", "success");
           })
           .catch((error) => {
-            console.log('Error in deleteImage', error);
-            Swal.fire('Error', 'An error occurred while deleting.', 'error');
+            console.log("Error in deleteImage", error);
+            Swal.fire("Error", "An error occurred while deleting.", "error");
           });
       } else if (result.dismiss === Swal.DismissReason.cancel) {
         // User canceled, no action needed
-        Swal.fire('Cancelled', 'Your item is safe :)', 'info');
+        Swal.fire("Cancelled", "Your item is safe :)", "info");
       }
     });
   };
+
+  // for scroll button
+  function scrollToTop() {
+    window.scrollTo({
+      top: 0,
+      behavior: "smooth",
+    });
+  }
 
   return (
     <div className="App">
@@ -91,15 +100,22 @@ function App() {
         <h1 className="App-title">React Gallery</h1>
       </header>
       <main>
-      <hr />
-      <br />
+        <hr />
+        <br />
         <div className="form-container">
           <GalleryForm addImage={addImage} />
         </div>
         <br />
+        <div id="scroll-button">
+          <button className="scrollBtn" onClick={scrollToTop}>
+            <div className="icon-container">
+            <ArrowUpwardIcon style={{ color: "rgb(107, 107, 231)"}} />
+            </div>
+          </button>
+        </div>
         <br />
         <br />
-        <GalleryList imagesList={imagesList} deleteImage={deleteImage}/>
+        <GalleryList imagesList={imagesList} deleteImage={deleteImage} />
       </main>
     </div>
   );

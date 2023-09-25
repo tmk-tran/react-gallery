@@ -2,6 +2,8 @@ import { useState } from "react";
 import axios from "axios";
 import FavoriteIcon from "@mui/icons-material/Favorite";
 import DeleteIcon from "@mui/icons-material/Delete";
+import SubjectIcon from '@mui/icons-material/Subject';
+
 
 export default function GalleryItem({ image, deleteImage }) {
   // pass in deleteImage as props
@@ -53,11 +55,11 @@ export default function GalleryItem({ image, deleteImage }) {
         <button className="likes" onClick={handleLikes}>
           <FavoriteIcon style={{ fontSize: 24, color: "red" }} />
         </button>
-        <p className="likes-text">{likes} likes</p>
-        <br />
-        <button className="editBtn" onClick={imageClick}>
-          Hit me!
-        </button>
+          <p className="likes-text">{likes} likes</p>
+          <br />
+        <div className="editBtn-container">
+          <button className="editBtn" onClick={imageClick}><SubjectIcon style={{ color:"rgb(157, 157, 255)" }} /></button>
+        </div>
       </div>
     </div>
   );

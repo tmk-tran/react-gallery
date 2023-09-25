@@ -117,6 +117,20 @@ img {
   right: 10px;
 }
 
+.editBtn-container {
+  margin-left: auto; /* pushes to the far right of under-image container */
+}
+
+.editBtn {
+  background-color: rgb(75, 65, 85);
+  border-radius: 5px;
+  border: 1px solid rgb(90, 103, 115);
+}
+
+.editBtn:hover {
+  background-color: rgb(100, 100, 100);
+}
+
 /* ~~~~~~~~~~ Form style ~~~~~~~~~~ */
 
 .closeBtn {
@@ -201,4 +215,44 @@ input {
 
 .close-button:hover {
   transform: scale(1.3);
+}
+
+/* ~~~~~~~~~~Scroll to top button ~~~~~~~~~~ */
+#scroll-button {
+  position: fixed;
+  left: 0;
+  top: 95%; /* Adjust this value to position the button vertically */
+  transform: translateY(-50%);
+  background-color: #464748;
+  color: #fff;
+  border: none;
+  border-radius: 10px;
+  padding: 10px 15px;
+  width: 5px;
+  height: 20px;
+  cursor: pointer;
+  /*display: none;*/ /* Hide the button by default */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+#scroll-button button {
+  background: none;
+  border: none;
+  padding: 0;
+  cursor: pointer;
+  color: inherit;
+}
+
+#scroll-button button:hover {
+  background-color: rgb(123, 156, 241);
+  color: ghostwhite;
+  border-radius: 5px;
+}
+
+.icon-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
