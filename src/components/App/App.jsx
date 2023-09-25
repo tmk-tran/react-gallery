@@ -12,7 +12,7 @@ function App() {
 
   useEffect(() => {
     getImages();
-  }, []);
+  }, []); // allows us to track state
 
   // GET
   const getImages = () => {
