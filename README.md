@@ -14,6 +14,10 @@ To practice passing values through `props` in React, I built the gallery using m
 - `GalleryList` - represents the gallery of images. 
 - `GalleryItem` - represents a single image in the gallery with the ability to click the image to toggle between image and description as well as the ability to like an image.
 
+## Screenshot
+
+![Alt text](image.png)
+
 ## Technologies Used
 - React
 - JavaScript
