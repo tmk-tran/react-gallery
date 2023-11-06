@@ -3,13 +3,13 @@
 "React Gallery" by T Mark Schisel
 
 ## Table of Contents
-[Instruction](#application-instruction)
-[Setup](#setup)
-[Screenshots](#screenshots)
-[Technologies](#technologies-used)
-[Styling](#styling)
-[Problems](#problems-solved)
-[Goals](#goals-to-be-completed-in-the-near-future)
+- [Instruction](#application-instruction)
+- [Setup](#setup)
+- [Screenshots](#screenshots)
+- [Technologies](#technologies-used)
+- [Styling](#styling)
+- [Problems](#problems-solved)
+- [Goals](#goals-to-be-completed-in-the-near-future)
 
 ## Description
 
