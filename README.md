@@ -2,6 +2,15 @@
 
 "React Gallery" by T Mark Schisel
 
+## Table of Contents
+[Instruction](#application-instruction)
+[Setup](#setup)
+[Screenshots](#screenshots)
+[Technologies](#technologies-used)
+[Styling](#styling)
+[Problems](#problems-solved)
+[Goals](#goals-to-be-completed-in-the-near-future)
+
 ## Description
 
 For this project, the requirements were:
@@ -14,26 +23,8 @@ To practice passing values through `props` in React, I built the gallery using m
 - `GalleryList` - represents the gallery of images. 
 - `GalleryItem` - represents a single image in the gallery with the ability to click the image to toggle between image and description as well as the ability to like an image.
 
-## Screenshot
 
-![Alt text](image.png)
-
-## Technologies Used
-- React
-- JavaScript
-- HTML
-- CSS
-- Node.js
-- PostgreSQL
-- React.js
-- PG 
-
-For additional styling, 
-    - Material UI
-    - SweetAlerts
-    - Multer
-
-## Application Instructions
+## Application Instruction
 
 Due to its inline-styling, this application was designed to be viewed on a smaller size screen, or window in browser. Viewing on a full size window may result in wide unused space on each side of images.  More design to come!
 
@@ -58,8 +49,33 @@ Now that the server is running, open a new terminal tab with `cmd + t` and start
 npm run client
 ```
 
-- To view image description, click either the image itself, or the button below, located to the bottom right of the image.
-    - On click, will reveal a red delete button. pressing this will delete the corresponding image from the page, and database.
+## Screenshots
+
+![Main Page](image.png)
+
+![Add Photo](image-1.png)
+
+- To view image description: click either the image itself, or the button below (located to the bottom right of the image)
+
+![Delete a Photo](image-2.png)
+
+- On click, will reveal a red delete button. Pressing this will delete the corresponding image from the page, and database.
+
+
+## Technologies Used
+- React
+- JavaScript
+- HTML
+- CSS
+- Node.js
+- PostgreSQL
+- React.js
+- PG 
+
+## Styling
+- Material UI
+- SweetAlerts
+- Multer
 
 
 ## Problems solved
@@ -69,7 +85,7 @@ npm run client
 - review of SQL database protocols, and operation
 - using Postman for testing, need to review
 
-## Additional Goals to be completed in the near future:
+## Goals to be completed in the near future:
 - [] make an edit button that allows description to be modified
 - [] make a comment button that can add comments/view
 - [x] back to the top button?
