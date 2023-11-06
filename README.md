@@ -53,13 +53,15 @@ npm run client
 
 ![Main Page](image.png)
 
+### Click the + button to add a photo:
+
 ![Add Photo](image-1.png)
 
-- To view image description: click either the image itself, or the button below (located to the bottom right of the image)
+### To view image description: click either the image itself, or the button below (located to the bottom right of the image)
 
 ![Delete a Photo](image-2.png)
 
-- On click, will reveal a red delete button. Pressing this will delete the corresponding image from the page, and database.
+### On click, will reveal a red delete button. Pressing this will delete the corresponding image from the page, and database.
 
 
 ## Technologies Used
